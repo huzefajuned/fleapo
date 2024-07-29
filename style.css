@@ -1,0 +1,226 @@
+:root {
+    /* Colors */
+    --white-color: #FFFFFF;
+    --black-color: #29180F;
+    --primary-color: #BF8B70;
+    --secondary-color: #F0DACD;
+    --third-color: #89D3D2;
+    --fourth-color: #E1EDE9;
+    --border-color: #FFFFFF;
+
+    /* Font Sizes */
+    --font-size-small: 14px;
+    --font-size-regular: 16px;
+    --font-size-medium: 18px;
+    --font-size-large: 22px;
+    --font-size-xlarge: 40px;
+    --font-size-xxlarge: 48px;
+
+    /* Font Family */
+    --font-family-sans: 'Roboto Serif', serif;
+}
+
+body,
+* {
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-medium);
+    color: var(--black-color);
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.heroContainer {
+    width: 100vw;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    /* background-color: fuchsia; */
+}
+
+/* Offers */
+
+.offers {
+    background-color: var(--primary-color);
+    width: 100vw;
+}
+
+#offersCard {
+    background-color: var(--primary-color);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#offersChild {
+    font-size: var(--font-size-small);
+}
+
+
+/* navbar */
+
+.navbar {
+    background-color: var(--white-color);
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #89D3D2; */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding: 20px;
+}
+
+.logo {
+    background-color: var(-- third-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 30%;
+    /* background-color: #BF8B70; */
+    position: relative;
+}
+
+.logoText {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    font-size: var(--font-size-medium);
+    font-weight: 600;
+    font-style: italic;
+    position: absolute;
+    left: 35px;
+}
+
+.button {
+    /* background-color: var(--primary-color); */
+}
+
+.button>button {
+    color: var(--white-color);
+    background-color: var(--third-color);
+    border: none;
+    height: 36px;
+    width: 130px;
+    padding: 3px;
+    font-size: var(--font-size-small);
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+/* Navlinks */
+.navlinks {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+    font-size: var(--font-size-regular);
+}
+
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+    font-size: var(--font-size-small);
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.nav-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.nav-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.nav-icons img {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    cursor: pointer;
+}
+
+/* hero */
+.hero {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('./images/hero.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.heroTexts {
+    /* background-color: var(--fourth-color); */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+    font-size: var(--font-size-xxlarge);
+    width: 70%;
+    margin:  auto 15%;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    position: relative;
+
+
+}
+
+.heroTexts> :first-child {
+    background-color: var(--white-color);
+    color: var(--black-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    width: 100%;
+}
+
+.heroTexts> :last-child {
+    color: var(--white-color);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: var(--primary-color);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 90px;
+  
+}
