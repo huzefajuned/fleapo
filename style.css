@@ -557,7 +557,8 @@ body,
 }
 
 /*  styles for the .springOffersContainer*/
-.springOffersContainer {
+.springOffersContainer,
+.mostWantedToysCollection {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -650,7 +651,8 @@ body,
   }
 
   /*  styles for the .springOffersContainer*/
-  .springOffersContainer {
+  .springOffersContainer,
+  .mostWantedToysCollection {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -735,7 +737,7 @@ body,
   background-color: var(--fourth-color);
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 30px;
 }
 .whatWeDoHeading {
   /* background-color: var(--secondary-color); */
@@ -756,7 +758,6 @@ body,
 .whatWeDoCarousalContainer {
   display: flex;
   flex-direction: column;
-  /* background-color: #a24513; */
   padding: 20px;
 }
 
@@ -892,4 +893,48 @@ body,
   .carousalDot.active {
     background-color: #333;
   }
+}
+
+/* mostWantedToysContainer */
+.mostWantedToysContainer {
+  background-color: var(--secondary-color);
+  padding: 1px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.mostWantedToysHeading {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  top: -40px;
+  margin: auto;
+}
+.mostWantedToysHeading > span {
+  background-color: var(--background-primary-color);
+  border-radius: 30px;
+  border: 3px solid;
+  border-color: var(--border-color);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+  padding: 0 20px;
+  font-size: var(--font-size-medium);
+  font-style: italic;
+  /* position: relative; */
+  /* top: 10px; */
+}
+.mostWantedToysHeading > span > img {
+  width: 40px;
+}
+
+.mostWantedToysCollection {
+  /* background-color: rgb(154, 180, 154); */
+  /* margin-top: 10px; */
+  /* margin-bottom: 10px; */
 }

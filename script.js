@@ -7,11 +7,11 @@ const heartIcon = "./images/social_icon/heart.png";
 const shoppingBagIcon = "./images/social_icon/shopping-bag.png";
 
 /**
- * import images for CollectionsCards from  CollectionsCard_Images folder.
+ * import images for CollectionsCards from  collectionsCard folder.
  */
-const image1 = "./images/CollectionsCard_Images/1.png";
-const image2 = "./images/CollectionsCard_Images/2.png";
-const image3 = "./images/CollectionsCard_Images/3.png";
+const image1 = "./images/collectionsCard/1.png";
+const image2 = "./images/collectionsCard/2.png";
+const image3 = "./images/collectionsCard/3.png";
 
 /**
  * import images for WhatWedo from  WhatWedo folder.
@@ -36,6 +36,15 @@ const offer1 = "./images/offers/offer1.png";
 const offer2 = "./images/offers/offer2.png";
 const offer3 = "./images/offers/offer3.png";
 const offer4 = "./images/offers/offer4.png";
+
+/**
+ * import toys Collections from toysCollection folder.
+ */
+
+const toy1 = "./images/toysCollection/toy1.png";
+const toy2 = "./images/toysCollection/toy2.png";
+const toy3 = "./images/toysCollection/toy3.png";
+const toy4 = "./images/toysCollection/toy4.png";
 
 /**
  * Offers data
@@ -211,6 +220,38 @@ const weDo = [
     title: "Spedizioni sicure",
     subTitle:
       "Offriamo consegne rapide per garantirti che il tuo peluche arrivi a destinazione in perfette condizioni.",
+  },
+];
+
+// toysCollection data
+const toysCollection = [
+  {
+    id: 3423,
+    image: toy1,
+    title: "Jumbo - 10.5 Elefante",
+    rating: "3.5",
+    price: "$24",
+  },
+  {
+    id: 1435,
+    image: toy2,
+    title: "Clover - 10.5 Lepre",
+    rating: "3.5",
+    price: "$25",
+  },
+  {
+    id: 1353,
+    image: toy3,
+    title: "Blaze - 13.5 Drago",
+    rating: "3.5",
+    price: "$20",
+  },
+  {
+    id: 4183,
+    image: toy4,
+    title: "Aria- 11.5 Farfalla",
+    rating: "3.5",
+    price: "$30",
   },
 ];
 
@@ -421,3 +462,29 @@ function updateCarousel() {
 
 // Initial render
 updateCarousel();
+
+/**
+ * 1. Rendering mostWantedToysCollection UI.
+ */
+const mostWantedToysCollection = document.querySelector(
+  ".mostWantedToysCollection"
+);
+
+toysCollection.forEach((offer) => {
+  const toysCollectionCard = document.createElement("div");
+  /**
+   * used same class  {  springOffersCard }
+   * both are same UI.
+   * re-used the css for both..
+   */
+  toysCollectionCard.className = "springOffersCard";
+
+  toysCollectionCard.innerHTML = `
+    <img src="${offer?.image}" alt="${offer?.title}">
+    <div class="title">${offer?.title}</div>
+    <div class="rating">Rating: ${offer?.rating}★</div>
+    <div class="price">${offer?.price}</div>
+  `;
+
+  mostWantedToysCollection.appendChild(toysCollectionCard);
+});
