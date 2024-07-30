@@ -23,6 +23,50 @@ const offers = [
   "Informazioni di consegna",
 ];
 
+// Close menu icon
+const closeHamburgerImg = "./images/close.png";
+
+/**
+ * import images from offers folder.
+ */
+
+const offer1 = "./images/offers/offer1.png";
+const offer2 = "./images/offers/offer2.png";
+const offer3 = "./images/offers/offer3.png";
+const offer4 = "./images/offers/offer4.png";
+
+// springOffers data
+const springOffers = [
+  {
+    id: 123,
+    image: offer1,
+    title: "Gigi - 12.5 Giraffa",
+    rating: "3.5",
+    price: "$24",
+  },
+  {
+    id: 143,
+    image: offer2,
+    title: "Bunny - 10.5 Coniglio",
+    rating: "3.5",
+    price: "$25",
+  },
+  {
+    id: 133,
+    image: offer3,
+    title: "Trixy - 8.5 Tricerapoto",
+    rating: "3.5",
+    price: "$20",
+  },
+  {
+    id: 183,
+    image: offer4,
+    title: "Teddy - 10.5 Orso",
+    rating: "3.5",
+    price: "$30",
+  },
+];
+
 // Rendering  Offers UI.
 const offersDiv = document.querySelector(".offers");
 const offersContainer = document.createElement("div");
@@ -179,4 +223,48 @@ collections.forEach((collection) => {
   `;
 
   collectionsCardContainer.appendChild(card);
+});
+
+// Open menu and close  menu.
+const hamburgerImg = document.querySelector(".hamburgerImg");
+hamburgerImg.addEventListener("click", () => {
+  const navlinks = document.querySelector(".navlinks");
+
+  if (!document.querySelector(".closeHamburger")) {
+    const closeMenu = document.createElement("img");
+    closeMenu.src = closeHamburgerImg;
+    closeMenu.className = "closeHamburger";
+    navlinks.appendChild(closeMenu);
+
+    // Add event listener to close button
+    closeMenu.addEventListener("click", () => {
+      navlinks.classList.remove("show");
+      setTimeout(() => {
+        navlinks.style.display = "none";
+      }, 400);
+      closeMenu.remove();
+    });
+  }
+
+  navlinks.style.display = "flex";
+  setTimeout(() => {
+    navlinks.classList.add("show");
+  }, 10);
+});
+
+//// Rendering spring offers UI.
+const springOffersContainer = document.querySelector(".springOffersContainer");
+
+springOffers.forEach((offer) => {
+  const springCard = document.createElement("div");
+  springCard.className = "springOffersCard";
+
+  springCard.innerHTML = `
+    <img src="${offer?.image}" alt="${offer?.title}">
+    <div class="title">${offer?.title}</div>
+    <div class="rating">Rating: ${offer?.rating}★</div>
+    <div class="price">${offer?.price}</div>
+  `;
+
+  springOffersContainer.appendChild(springCard);
 });
