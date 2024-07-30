@@ -24,15 +24,8 @@ const weDoImg5 = "./images/whatWeDo/1.png";
 const weDoImg6 = "./images/whatWeDo/2.png";
 
 /**
- * Offers data
+ *  Close menu icon
  */
-const offers = [
-  "Hai bisogno di aiuto?",
-  "Ottieni subito uno sconto del 10%:Iscriviti alla newsletter",
-  "Informazioni di consegna",
-];
-
-// Close menu icon
 const closeHamburgerImg = "./images/close.png";
 
 /**
@@ -43,6 +36,15 @@ const offer1 = "./images/offers/offer1.png";
 const offer2 = "./images/offers/offer2.png";
 const offer3 = "./images/offers/offer3.png";
 const offer4 = "./images/offers/offer4.png";
+
+/**
+ * Offers data
+ */
+const offers = [
+  "Hai bisogno di aiuto?",
+  "Ottieni subito uno sconto del 10%:Iscriviti alla newsletter",
+  "Informazioni di consegna",
+];
 
 // springOffers data
 const springOffers = [
@@ -196,13 +198,30 @@ const weDo = [
     subTitle:
       "Offriamo consegne rapide per garantirti che il tuo peluche arrivi a destinazione in perfette condizioni.",
   },
+  {
+    id: 33334,
+    icon: weDoImg2,
+    title: "Spedizioni sicure",
+    subTitle:
+      "Offriamo consegne rapide per garantirti che il tuo peluche arrivi a destinazione in perfette condizioni.",
+  },
+  {
+    id: 1212,
+    icon: weDoImg4,
+    title: "Spedizioni sicure",
+    subTitle:
+      "Offriamo consegne rapide per garantirti che il tuo peluche arrivi a destinazione in perfette condizioni.",
+  },
 ];
 
-// Rendering  Offers UI.
+/**
+ *  Rendering  Offers UI.
+ */
+
 const offersDiv = document.querySelector(".offers");
 const offersContainer = document.createElement("div");
 offersContainer.id = "offersCard";
-// Iterate over the offers array and create elements for each offer
+
 offers.forEach((offer) => {
   const offerElement = document.createElement("p");
   offerElement.textContent = offer;
@@ -210,12 +229,12 @@ offers.forEach((offer) => {
   offersContainer.appendChild(offerElement);
 });
 
-// Append the offersContainer to the offersDiv
 offersDiv.appendChild(offersContainer);
 
-// Creating navbar Dynamically..
-//  Render navlinks
-//  Get the navlinks container
+/**
+ *  1.Creating navbar Dynamically., 2.Render navlinks , 3. Get the navlinks container
+ */
+
 const navlinksDiv = document.querySelector(".navlinks");
 navlinks.forEach((link) => {
   let element;
@@ -280,7 +299,9 @@ collections.forEach((collection) => {
   collectionsCardContainer.appendChild(card);
 });
 
-// Open menu and close  menu.
+/**
+ * Opening || Clsosing menus
+ */
 const hamburgerImg = document.querySelector(".hamburgerImg");
 hamburgerImg.addEventListener("click", () => {
   const navlinks = document.querySelector(".navlinks");
@@ -307,7 +328,9 @@ hamburgerImg.addEventListener("click", () => {
   }, 10);
 });
 
-// Rendering spring offers UI.
+/**
+ * 1. Rendering spring offers UI.
+ */
 const springOffersContainer = document.querySelector(".springOffersContainer");
 
 springOffers.forEach((offer) => {
@@ -324,7 +347,9 @@ springOffers.forEach((offer) => {
   springOffersContainer.appendChild(springCard);
 });
 
-// rendering whatWeDoCarousalContainer.
+/**
+ * 1. Rendering whatWeDoCarousalContainer.
+ */
 
 const whatWeDoCarousalContainer = document.querySelector(
   ".whatWeDoCarousalContainer"
@@ -333,10 +358,16 @@ const whatWeDoCarousalContainer = document.querySelector(
 const carousalDots = document.querySelector(".carousalDots");
 const carousalContainer = document.querySelector(".carousalContainer");
 
+/**
+ *  @param itemsPerPage  minimum cards per page will shown.
+ *  @param currentPage   tracking the current page { initially 0}
+ */
 const itemsPerPage = 3;
 let currentPage = 0;
 
-// Create carousel items
+/**
+ * 1.Creating carousel with carousel  items cards.
+ */
 function renderCarousel() {
   carousalContainer.innerHTML = "";
   const start = currentPage * itemsPerPage;
@@ -354,7 +385,11 @@ function renderCarousel() {
     carousalContainer.appendChild(carouselCard);
   });
 }
-// Create carousel dots
+
+/**
+ * 1.Create carousel dots.
+ */
+
 function renderDots() {
   carousalDots.innerHTML = ""; // Clear existing dots
   const numberOfPages = Math.ceil(weDo.length / itemsPerPage);
