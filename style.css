@@ -938,3 +938,206 @@ body,
   /* margin-top: 10px; */
   /* margin-bottom: 10px; */
 }
+
+.toysCollectionHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 40px;
+}
+.toysCollectionHeader > span {
+  /* background-color: var(--background-primary-color); */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  font-size: var(--font-size-xlarge);
+}
+.toysCollectionHeader > span > img {
+  width: 50px;
+}
+
+/*  customer opinions */
+/* Container for customer opinions */
+.customerOpinion {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #007bff; */
+  padding: 60px;
+  overflow: hidden;
+  gap: 40px;
+}
+
+.opinionLeftCard {
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  padding: 5px;
+  width: 50%;
+  height: 50%;
+  border-radius: 50px;
+}
+
+.opinionsInner {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.opinionCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #fff;
+  border: 3px solid;
+  border-color: var(--border-color);
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.opinionLeftCard > img {
+  width: 100%;
+}
+.opinionCard > img {
+  /* height: 200px; */
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.cardContent > h2 {
+  font-size: var(--font-size-large);
+  margin: 0 0 10px;
+}
+
+.cardContent > p {
+  font-size: var(--font-size-small);
+  margin: 0 0 10px;
+  cursor: pointer;
+}
+
+.content {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; */
+  /* background-color: #122d4a; */
+}
+
+.content > h2 {
+  font-size: var(--font-size-xlarge);
+  margin: 0 0 10px;
+}
+
+.content > p {
+  font-size: var(--font-size-medium);
+  margin: 0 0 10px;
+}
+
+.content p {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.opinionCard button:hover {
+  background-color: #0056b3;
+}
+
+/*  customer opinions */
+/* small devices */
+@media only screen and (max-width: 600px) {
+  .customerOpinion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #007bff; */
+    /* padding:160px; */
+    overflow: hidden;
+    gap: 10px;
+  }
+
+  .opinionLeftCard {
+    /* background-color: var(--primary-color); */
+    /* background-color: rebeccapurple; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    padding: 5px;
+    width: 100%;
+    /* height: 50%; */
+    overflow: hidden;
+    border-radius: 40px;
+  }
+
+  .opinionLeftCard > img {
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+  }
+  .content {
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content > h2 {
+    font-size: var(--font-size-medium);
+    margin: 0 0 2px;
+  }
+
+  .content > p {
+    font-size: var(--font-size-small);
+    margin: 0 0 2px;
+  }
+
+  .content p {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .opinionsInner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  .opinionCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #fff;
+    border: 3px solid;
+    border-color: var(--border-color);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}

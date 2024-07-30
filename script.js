@@ -47,6 +47,13 @@ const toy3 = "./images/toysCollection/toy3.png";
 const toy4 = "./images/toysCollection/toy4.png";
 
 /**
+ * import  CustomersOponions images from CustomersOponions folder.
+ */
+
+const opinion2 = "./images/customersOpinions/image2.png";
+const opinion3 = "./images/customersOpinions/image3.png";
+
+/**
  * Offers data
  */
 const offers = [
@@ -252,6 +259,26 @@ const toysCollection = [
     title: "Aria- 11.5 Farfalla",
     rating: "3.5",
     price: "$30",
+  },
+];
+
+// customersOponions data
+const customersOponions = [
+  {
+    id: 6523,
+    image: opinion2,
+    title: "Regala un sorriso con la nostra Gift Card",
+    description:
+      "Dai un'occhiata alle nostre offerte speciali! Troverai sconti imperdibili su alcuni dei nostri peluche più popolari. Ma affrettati, le offerte sono per tempo limitato!",
+    buttonText: "Le offerte speciali della settimana",
+  },
+  {
+    id: 9523,
+    image: opinion3,
+    title: "Personalizza il tuo peluche con noi",
+    description:
+      "Vuoi rendere il tuo peluche ancora più speciale? Personalizzalo con il nome o la data! Offriamo un servizio di personalizzazione per molti dei nostri peluche, rendendoli unici e indimenticabili.",
+    buttonText: "Scopri di più",
   },
 ];
 
@@ -487,4 +514,25 @@ toysCollection.forEach((offer) => {
   `;
 
   mostWantedToysCollection.appendChild(toysCollectionCard);
+});
+
+/**
+ * 1. Rendering customers Opinion UI.
+ */
+const customerOpinionContainer = document.querySelector(".opinionsInner");
+
+customersOponions.forEach((opinion) => {
+  const opinionCard = document.createElement("div");
+  opinionCard.className = "opinionCard";
+
+  opinionCard.innerHTML = `
+    <img src="${opinion.image}" alt="${opinion.title}">
+    <div class="cardContent">
+      <h2>${opinion.title}</h2>
+      <p>${opinion.description}</p>
+      <p>${opinion.buttonText}></p>
+    </div>
+  `;
+
+  customerOpinionContainer.appendChild(opinionCard);
 });
