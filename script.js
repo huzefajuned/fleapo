@@ -9,10 +9,19 @@ const shoppingBagIcon = "./images/social_icon/shopping-bag.png";
 /**
  * import images for CollectionsCards from  CollectionsCard_Images folder.
  */
-
 const image1 = "./images/CollectionsCard_Images/1.png";
 const image2 = "./images/CollectionsCard_Images/2.png";
 const image3 = "./images/CollectionsCard_Images/3.png";
+
+/**
+ * import images for WhatWedo from  WhatWedo folder.
+ */
+const weDoImg1 = "./images/whatWeDo/1.png";
+const weDoImg2 = "./images/whatWeDo/2.png";
+const weDoImg3 = "./images/whatWeDo/1.png";
+const weDoImg4 = "./images/whatWeDo/2.png";
+const weDoImg5 = "./images/whatWeDo/1.png";
+const weDoImg6 = "./images/whatWeDo/2.png";
 
 /**
  * Offers data
@@ -67,21 +76,6 @@ const springOffers = [
   },
 ];
 
-// Rendering  Offers UI.
-const offersDiv = document.querySelector(".offers");
-const offersContainer = document.createElement("div");
-offersContainer.id = "offersCard";
-// Iterate over the offers array and create elements for each offer
-offers.forEach((offer) => {
-  const offerElement = document.createElement("p");
-  offerElement.textContent = offer;
-  offerElement.id = "offersChild";
-  offersContainer.appendChild(offerElement);
-});
-
-// Append the offersContainer to the offersDiv
-offersDiv.appendChild(offersContainer);
-
 /**
  * navlinks data
  */
@@ -127,12 +121,102 @@ const navlinks = [
   },
 ];
 
+/**
+ * CollectionsCards Data
+ */
+
+const collections = [
+  {
+    id: 12,
+    image: image1,
+    title: "Fantasy Friends ",
+    description:
+      "Collezione di peluche mitici e fantastici: Perfetti per sognare ad occhi aperti.",
+  },
+  {
+    id: 13,
+    image: image2,
+    title: "Vintage Treasures ",
+    description:
+      "Collezione retrò, peluche tradizionali e storici, per un tocco di nostalgia.",
+  },
+  {
+    id: 14,
+    image: image3,
+    title: "Wild Adventures",
+    description:
+      "In Questa collezione troverai peluche di animali esotici per tutti tipi di avventure .",
+  },
+];
+
+/**
+ * whatWeDo Data
+ */
+
+const weDo = [
+  {
+    id: 3222,
+    icon: weDoImg1,
+    title: "Spedizioni sicure",
+    subTitle:
+      "Offriamo consegne rapide per garantirti che il tuo peluche arrivi a destinazione in perfette condizioni.",
+  },
+  {
+    id: 5222,
+    icon: weDoImg2,
+    title: "Materiali di qualità",
+    subTitle:
+      "Siamo impegnati a utilizzare materiali di qualità per i nostri peluche, per garantirti un prodotto che durerà nel tempo.",
+  },
+  {
+    id: 322,
+    icon: weDoImg3,
+    title: "Spedizioni sicure",
+    subTitle:
+      "Offriamo consegne rapide per garantirti che il tuo peluche arrivi a destinazione in perfette condizioni.",
+  },
+  {
+    id: 3272,
+    icon: weDoImg4,
+    title: "Servizio eccellente",
+    subTitle:
+      "La nostra assistenza clienti è a tua disposizione per rispondere a tutte le tue domande e risolvere qualsiasi problema.",
+  },
+  {
+    id: 9822,
+    icon: weDoImg2,
+    title: "Spedizioni sicure",
+    subTitle:
+      "Offriamo consegne rapide per garantirti che il tuo peluche arrivi a destinazione in perfette condizioni.",
+  },
+  {
+    id: 98922,
+    icon: weDoImg4,
+    title: "Spedizioni sicure",
+    subTitle:
+      "Offriamo consegne rapide per garantirti che il tuo peluche arrivi a destinazione in perfette condizioni.",
+  },
+];
+
+// Rendering  Offers UI.
+const offersDiv = document.querySelector(".offers");
+const offersContainer = document.createElement("div");
+offersContainer.id = "offersCard";
+// Iterate over the offers array and create elements for each offer
+offers.forEach((offer) => {
+  const offerElement = document.createElement("p");
+  offerElement.textContent = offer;
+  offerElement.id = "offersChild";
+  offersContainer.appendChild(offerElement);
+});
+
+// Append the offersContainer to the offersDiv
+offersDiv.appendChild(offersContainer);
+
 // Creating navbar Dynamically..
-
-// // Get the navlinks container
+//  Render navlinks
+//  Get the navlinks container
 const navlinksDiv = document.querySelector(".navlinks");
-
-// // Render navlinks
 navlinks.forEach((link) => {
   let element;
 
@@ -176,39 +260,10 @@ navlinks.forEach((link) => {
   }
 });
 
-/**
- * CollectionsCards Data
- */
-
-const collections = [
-  {
-    id: 12,
-    image: image1,
-    title: "Fantasy Friends ",
-    description:
-      "Collezione di peluche mitici e fantastici: Perfetti per sognare ad occhi aperti.",
-  },
-  {
-    id: 13,
-    image: image2,
-    title: "Vintage Treasures ",
-    description:
-      "Collezione retrò, peluche tradizionali e storici, per un tocco di nostalgia.",
-  },
-  {
-    id: 14,
-    image: image3,
-    title: "Wild Adventures",
-    description:
-      "In Questa collezione troverai peluche di animali esotici per tutti tipi di avventure .",
-  },
-];
-
+// Rendering  collectionsCard UI.
 const collectionsCardContainer = document.querySelector(
   ".collectionsCardContainer"
 );
-
-// Rendering  collectionsCard UI.
 
 collections.forEach((collection) => {
   const card = document.createElement("div");
@@ -252,7 +307,7 @@ hamburgerImg.addEventListener("click", () => {
   }, 10);
 });
 
-//// Rendering spring offers UI.
+// Rendering spring offers UI.
 const springOffersContainer = document.querySelector(".springOffersContainer");
 
 springOffers.forEach((offer) => {
@@ -268,3 +323,66 @@ springOffers.forEach((offer) => {
 
   springOffersContainer.appendChild(springCard);
 });
+
+// rendering whatWeDoCarousalContainer.
+
+const whatWeDoCarousalContainer = document.querySelector(
+  ".whatWeDoCarousalContainer"
+);
+
+const carousalDots = document.querySelector(".carousalDots");
+const carousalContainer = document.querySelector(".carousalContainer");
+
+const itemsPerPage = 3;
+let currentPage = 0;
+
+// Create carousel items
+function renderCarousel() {
+  carousalContainer.innerHTML = "";
+  const start = currentPage * itemsPerPage;
+  const end = start + itemsPerPage;
+  const itemsToDisplay = weDo.slice(start, end);
+
+  itemsToDisplay.forEach((card) => {
+    const carouselCard = document.createElement("div");
+    carouselCard.className = "carouselCard";
+    carouselCard.innerHTML = `
+      <img src="${card.icon}" alt="${card.title}">
+      <h2>${card.title}</h2>
+      <p>${card.subTitle}</p>
+    `;
+    carousalContainer.appendChild(carouselCard);
+  });
+}
+// Create carousel dots
+function renderDots() {
+  carousalDots.innerHTML = ""; // Clear existing dots
+  const numberOfPages = Math.ceil(weDo.length / itemsPerPage);
+
+  for (let i = 0; i < numberOfPages; i++) {
+    const dot = document.createElement("div");
+    dot.className = "carousalDot";
+    dot.dataset.index = i;
+
+    // Set active class for the current page
+    if (i === currentPage) {
+      dot.classList.add("active");
+    }
+
+    dot.addEventListener("click", () => {
+      currentPage = i;
+      updateCarousel();
+    });
+
+    carousalDots.appendChild(dot);
+  }
+}
+
+// Update carousel and dots
+function updateCarousel() {
+  renderCarousel();
+  renderDots();
+}
+
+// Initial render
+updateCarousel();
