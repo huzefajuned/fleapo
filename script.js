@@ -372,6 +372,52 @@ const opinionsForCustomers = [
 ];
 
 /**
+ * footer links data
+ */
+
+const footerLinks = [
+  {
+    "Per aiutare": [
+      "Consegna",
+      "Ritorno",
+      "Domande frequenti",
+      "Pagamento sicuro",
+      "Privacy e sicurezza",
+    ],
+  },
+  {
+    "Chi siamo": [
+      "La nostra storia",
+      "Sicurezza e idonetà",
+      "Generali T $ C",
+      "Commercio equo",
+      "Mappa del sito",
+    ],
+  },
+  {
+    Commercio: [
+      "Rivenditori esterni",
+      "Diventa un rivenditoore",
+      "Fiere e Convegni",
+      "Termini e condizioni",
+      "Pubbliche relazioni",
+    ],
+  },
+  {
+    Supporto: [
+      "Il mio conto",
+      "Spedizione",
+      "Contattaci",
+      "Spedizione estiva",
+      "Richiamare",
+    ],
+  },
+  {
+    Social: ["Instagram", "Facebook", "Twitter", "You Tube ", "Pinteres"],
+  },
+];
+
+/**
  *  Rendering  Offers UI.
  */
 
@@ -648,3 +694,39 @@ function updateOpinionCarousel() {
 
 // Initial render
 updateOpinionCarousel();
+
+/**
+ * 1. Rendering footerLinks UI.
+ */
+
+function renderFooterLinks(links) {
+  const footer = document.querySelector(".footerLinksContainer");
+
+  links.forEach((linkGroup) => {
+    const heading = Object.keys(linkGroup)[0];
+    const linkArray = linkGroup[heading];
+
+    const section = document.createElement("div");
+    section.className = "footer-section";
+
+    const title = document.createElement("h3");
+    title.textContent = heading;
+    section.appendChild(title);
+
+    const list = document.createElement("ul");
+    linkArray.forEach((item) => {
+      const listItem = document.createElement("li");
+      const anchor = document.createElement("a");
+      anchor.href = "#"; 
+      anchor.textContent = item;
+      listItem.appendChild(anchor);
+      list.appendChild(listItem);
+    });
+
+    section.appendChild(list);
+    footer.appendChild(section);
+  });
+}
+
+// Initial render
+renderFooterLinks(footerLinks);
