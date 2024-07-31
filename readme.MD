@@ -32,15 +32,17 @@ The primary goal of this assignment dynamic content integration and code reusabi
 ![Web View](screenshots/desktop5.png)
 ![Web View](screenshots/desktop6.png)
 
+
 #### Mobile View
 
-![Mobile View](screenshots/mobile1.png)
-![Mobile View](screenshots/mobile2.png)
-![Mobile View](screenshots/mobile3.png)
-![Mobile View](screenshots/mobile4.png)
-![Mobile View](screenshots/mobile5.png)
-![Mobile View](screenshots/mobile6.png)
-![Mobile View](screenshots/mobile7.png)
+<img src="screenshots/mobile1.png" alt="Mobile View" width="300" />
+<img src="screenshots/mobile2.png" alt="Mobile View" width="300" />
+<img src="screenshots/mobile3.png" alt="Mobile View" width="300" />
+<img src="screenshots/mobile4.png" alt="Mobile View" width="300" />
+<img src="screenshots/mobile5.png" alt="Mobile View" width="300" />
+<img src="screenshots/mobile6.png" alt="Mobile View" width="300" />
+<img src="screenshots/mobile7.png" alt="Mobile View" width="300" />
+
 
 ### Installation
 
