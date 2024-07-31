@@ -57,15 +57,6 @@ body,
   font-size: var(--font-size-small);
 }
 
-/* Offers  */
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  #offersCard {
-    display: none;
-  }
-}
-
 /* navbar */
 
 .navbar {
@@ -134,6 +125,7 @@ body,
   color: black;
   font-weight: lighter;
   font-size: var(--font-size-regular);
+  cursor: pointer;
 }
 
 .nav-dropdown {
@@ -190,88 +182,19 @@ body,
 .closeHamburger {
   display: none;
 }
-/* Navbar  */
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .heroContainer {
-    width: 100vw;
-    height: 45vh;
-    display: flex;
-    flex-direction: column;
-    /* background-color: green; */
-    position: relative;
-  }
-  .navbar {
-    padding-left: 5px;
-    padding-right: 5px;
-    padding: 5px;
-  }
-  .logo {
-    /* background-color: #bf8b70; */
-    width: 60%;
-  }
-  .navlinks {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    z-index: 9999;
-    top: 1px;
-    left: 1px;
-    background-color: var(--white-color);
-    opacity: 0;
-    transform: translateY(-100%);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-  }
-
-  .navlinks.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .nav-item {
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: bolder;
-    font-size: var(--font-size-regular);
-  }
-  .nav-icons {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-  }
-
-  .nav-icons img {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    flex-direction: row;
-    gap: 14px;
-    cursor: pointer;
-  }
-  .hamburger {
-    display: block;
-  }
-  .closeHamburger {
-    display: block;
-    height: 30px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-}
 
 /* hero */
+/* hero */
 .hero {
-  background: url(./images/hero.png);
-  background-size: contain; /* Scales the image to cover the entire area */
-  height: 100vh; /* Sets the height to 100% of the viewport */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Adjust based on the desired height */
+  width: 100vw; /* Full width of the viewport */
+  background-image: url("./images/hero.png");
+  background-repeat: no-repeat;
+  background-size: contain; /* Cover the entire container */
+  /* background-position: center; Center the image */
+  background-color: var(
+    --background-primary-color
+  ); /* Optional, for fallback */
 }
 
 .heroTexts {
@@ -318,67 +241,6 @@ body,
   border-right: 5px solid;
   border-color: var(--secondary-color);
   font-size: var(--font-size-medium);
-}
-
-/* small devices */
-@media only screen and (max-width: 600px) {
-  .hero {
-    height: 600px;
-    width: 100vw;
-    background-image: url("./images/hero.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    /* background-position: center; */
-    /* background-color: var(--background-primary-color); */
-  }
-  .heroTexts {
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 100%;
-    margin: auto;
-    border-right: 5px solid;
-    border-color: var(--secondary-color);
-    font-size: var(--font-size-medium);
-    position: absolute;
-    left: 0px;
-    bottom: 20px;
-    gap: 10px;
-    border: none;
-  }
-  .heroTexts > :first-child {
-    background-color: var(--white-color);
-    color: var(--black-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    width: 100%;
-    height: 100%;
-    border-right: 5px solid;
-    border-color: var(--secondary-color);
-    font-size: var(--font-size-medium);
-  }
-
-  .heroTexts > :last-child {
-    background-color: var(--white-color);
-    color: var(--black-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    width: 100%;
-    height: 100%;
-    border-right: 5px solid;
-    border-color: var(--secondary-color);
-    font-size: var(--font-size-small);
-    position: static;
-  }
 }
 
 /* Collections */
@@ -457,79 +319,6 @@ body,
 .collectionCardDescription {
   font-size: var(--font-size-small);
   color: #666;
-}
-
-/* Collections */
-/* small devices */
-@media only screen and (max-width: 600px) {
-  .collections {
-    gap: 10px;
-    height: 100%;
-    justify-content: space-between;
-    padding: 10px;
-  }
-  .collectionsHeading {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-  }
-  .collectionsHeading > h1 {
-    font-size: var(--font-size-large);
-  }
-  .collectionsHeading > p {
-    font-size: var(--font-size-medium);
-  }
-
-  /* collectionsCardContainer  */
-  .collectionsCardContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    /* gap: 10px; */
-  }
-
-  /* Card Styles */
-  .collectionCard {
-    background: #fff;
-    border-radius: 34px;
-    padding: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* overflow: hidden; */
-    max-width: 350px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    border-color: var(--border-color);
-    border-width: 3px;
-    margin: auto;
-  }
-
-  .collectionCardImage {
-    width: 100%;
-    height: 100%;
-    border-top-right-radius: 34px;
-    border-top-left-radius: 34px;
-  }
-
-  .collectionCardContent {
-    padding: 12px;
-  }
-
-  .collectionCardTitle {
-    font-size: var(--font-size-medium);
-    margin: 10px 0;
-  }
-
-  .collectionCardDescription {
-    font-size: var(--font-size-small);
-    color: #666;
-  }
 }
 
 /* springOffer */
@@ -616,101 +405,6 @@ body,
   font-size: 20px;
   color: #333;
   margin-bottom: 16px;
-}
-
-/* springOffer */
-
-/* small devices */
-@media only screen and (max-width: 600px) {
-  .springOffer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    border-color: var(--black-color);
-    border: 2px solid;
-    border-radius: 50px;
-    padding: 0px 2px;
-    margin: 0 auto;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    /* background-color: #666; */
-  }
-
-  .springOffer > img {
-    width: 60px;
-  }
-
-  .springOffer > h2 {
-    font-size: var(--font-size-small);
-    font-style: italic;
-    position: relative;
-    left: -12px;
-  }
-
-  /*  styles for the .springOffersContainer*/
-  .springOffersContainer,
-  .mostWantedToysCollection {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-    padding: 20px;
-    background-color: #f4f4f4;
-  }
-
-  /* Styles for each offer card */
-  .springOffersCard {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-width: 100%;
-    max-width: 430px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-    border-radius: 30px;
-    padding: 4px;
-  }
-
-  .springOffersCard:hover {
-    transform: scale(1.05);
-  }
-
-  /* Styles for the image */
-  .springOffersCard img {
-    width: 100%;
-    height: 80%;
-    display: block;
-    object-fit: contain;
-    background-color: var(--background-primary-color);
-    border-top-left-radius: 27px;
-    border-top-right-radius: 27px;
-  }
-
-  /* Styles for the title */
-  .springOffersCard .title {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 16px 0;
-  }
-
-  /* Styles for the rating */
-  .springOffersCard .rating {
-    font-size: 16px;
-    color: #ffcc00; /* Gold color for stars */
-  }
-
-  /* Styles for the price */
-  .springOffersCard .price {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 16px;
-  }
 }
 
 /* explore Button */
@@ -807,90 +501,6 @@ body,
 
 .carousalDot.active {
   background-color: #333;
-}
-
-/* whatWeDo */
-/* small devices */
-@media only screen and (max-width: 600px) {
-  .whatWeDo {
-    /* background-color: var(--fourth-color); */
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    /* background-color: rebeccapurple; */
-  }
-  .whatWeDoHeading {
-    /* background-color: var(--secondary-color); */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 2px;
-  }
-  .whatWeDoHeading > img {
-    width: 50px;
-    /* background-color: var(--border-color); */
-  }
-  .whatWeDoHeading > h1 {
-    font-size: var(--font-size-medium);
-  }
-
-  /* whatWeDoCarousalContainer */
-  .whatWeDoCarousalContainer {
-    display: flex;
-    flex-direction: column;
-    /* background-color: #a24513; */
-    padding: 10px;
-  }
-
-  /* Style for carousel items */
-  .carousalContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .carouselCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    min-width: 300px;
-    width: 100%;
-    height: 200px;
-    background-color: var(--white-color);
-    box-sizing: border-box;
-    padding: 10px;
-    text-align: center;
-    border: 3px solid;
-    border-color: var(--border-color);
-    border-radius: 30px;
-  }
-
-  .carouselCard > img {
-    width: 50px;
-  }
-  /* carousel dots */
-  .carousalDots {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-  }
-
-  .carousalDot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #ccc;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .carousalDot.active {
-    background-color: #333;
-  }
 }
 
 /* mostWantedToysContainer */
@@ -1058,86 +668,6 @@ body,
 .opinionCard button:hover {
   background-color: #0056b3;
 }
-
-/*  customer opinions */
-/* small devices */
-@media only screen and (max-width: 600px) {
-  .customerOpinion {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    overflow: hidden;
-    gap: 10px;
-  }
-
-  .opinionLeftCard {
-    /* background-color: var(--primary-color); */
-    /* background-color: rebeccapurple; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0px;
-    padding: 5px;
-    width: 100%;
-    /* height: 50%; */
-    overflow: hidden;
-    border-radius: 40px;
-  }
-
-  .opinionLeftCard > img {
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-  }
-  .content {
-    padding: 4px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .content > h2 {
-    font-size: var(--font-size-medium);
-    margin: 0 0 2px;
-  }
-
-  .content > p {
-    font-size: var(--font-size-small);
-    margin: 0 0 2px;
-  }
-
-  .content p {
-    padding: 10px 15px;
-    font-size: 14px;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-
-  .opinionsInner {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-  }
-  .opinionCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    color: #fff;
-    border: 3px solid;
-    border-color: var(--border-color);
-    border-radius: 30px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-}
-
 /* opinions for customers */
 
 .opinionsForCustomers {
@@ -1252,31 +782,6 @@ body,
   width: 50px;
 }
 
-/* opinions For CustomersContainer */
-/* small device */
-@media only screen and (max-width: 600px) {
-  .opinionsForCustomersContainer {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    background-color: var(--fourth-color);
-  }
-
-  /* Style for carousel items */
-  .opinionCardContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    transition: transform 0.3s ease;
-  }
-  .opinionCardContainer > .carouselCard {
-    padding: 0px;
-    display: flex;
-    flex-direction: row-reverse;
-    position: relative;
-  }
-}
-
 /* footer  */
 footer {
   background-color: var(--secondary-color);
@@ -1373,12 +878,485 @@ form > button {
   align-items: center;
   padding: 20px 40px;
 }
-/* footer  */
-/* small devices */
+
+/* 
+/* small devices (phones, 600px and down)
+ */
+
 @media only screen and (max-width: 600px) {
-  footer {
-    background-color: var(--secondary-color);
+  /* Offers  */
+  #offersCard {
+    display: none;
+  }
+
+  /* Navbar  */
+  .heroContainer {
+    width: 100vw;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    /* background-color: green; */
+    position: relative;
+  }
+  .navbar {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding: 5px;
+  }
+  .logo {
+    /* background-color: #bf8b70; */
+    width: 60%;
+  }
+  .navlinks {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+    top: 1px;
+    left: 1px;
+    background-color: var(--white-color);
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .navlinks.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-item {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bolder;
+    font-size: var(--font-size-regular);
+  }
+  .nav-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .nav-icons img {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    cursor: pointer;
+  }
+  .hamburger {
+    display: block;
+  }
+  .closeHamburger {
+    display: block;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  /* hero */
+  .hero {
+    height: 600px;
+    width: 100vw;
+    background-image: url("./images/hero.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* background-position: center; */
+    /* background-color: var(--background-primary-color); */
+  }
+  .heroTexts {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    margin: auto;
+    border-right: 5px solid;
+    border-color: var(--secondary-color);
+    font-size: var(--font-size-medium);
+    position: absolute;
+    left: 0px;
+    bottom: 20px;
+    gap: 10px;
+    border: none;
+  }
+  .heroTexts > :first-child {
+    background-color: var(--white-color);
+    color: var(--black-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    width: 100%;
+    height: 100%;
+    border-right: 5px solid;
+    border-color: var(--secondary-color);
+    font-size: var(--font-size-medium);
+  }
+
+  .heroTexts > :last-child {
+    background-color: var(--white-color);
+    color: var(--black-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    width: 100%;
+    height: 100%;
+    border-right: 5px solid;
+    border-color: var(--secondary-color);
+    font-size: var(--font-size-small);
+    position: static;
+  }
+
+  /* Collections */
+  .collections {
+    gap: 10px;
+    height: 100%;
+    justify-content: space-between;
     padding: 10px;
+  }
+  .collectionsHeading {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  .collectionsHeading > h1 {
+    font-size: var(--font-size-large);
+  }
+  .collectionsHeading > p {
+    font-size: var(--font-size-medium);
+  }
+
+  /* collectionsCardContainer  */
+  .collectionsCardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* gap: 10px; */
+  }
+
+  /* Card Styles */
+  .collectionCard {
+    background: #fff;
+    border-radius: 34px;
+    padding: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* overflow: hidden; */
+    max-width: 350px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    border-color: var(--border-color);
+    border-width: 3px;
+    margin: auto;
+  }
+
+  .collectionCardImage {
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 34px;
+    border-top-left-radius: 34px;
+  }
+
+  .collectionCardContent {
+    padding: 12px;
+  }
+
+  .collectionCardTitle {
+    font-size: var(--font-size-medium);
+    margin: 10px 0;
+  }
+
+  .collectionCardDescription {
+    font-size: var(--font-size-small);
+    color: #666;
+  }
+
+  /* springOffer */
+  .springOffer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-color: var(--black-color);
+    border: 2px solid;
+    border-radius: 50px;
+    padding: 0px 2px;
+    margin: 0 auto;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    /* background-color: #666; */
+  }
+
+  .springOffer > img {
+    width: 60px;
+  }
+
+  .springOffer > h2 {
+    font-size: var(--font-size-small);
+    font-style: italic;
+    position: relative;
+    left: -12px;
+  }
+
+  /*  styles for the .springOffersContainer*/
+  .springOffersContainer,
+  .mostWantedToysCollection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+
+  /* Styles for each offer card */
+  .springOffersCard {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 100%;
+    max-width: 430px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 4px;
+  }
+
+  .springOffersCard:hover {
+    transform: scale(1.05);
+  }
+
+  /* Styles for the image */
+  .springOffersCard img {
+    width: 100%;
+    height: 80%;
+    display: block;
+    object-fit: contain;
+    background-color: var(--background-primary-color);
+    border-top-left-radius: 27px;
+    border-top-right-radius: 27px;
+  }
+
+  /* Styles for the title */
+  .springOffersCard .title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 16px 0;
+  }
+
+  /* Styles for the rating */
+  .springOffersCard .rating {
+    font-size: 16px;
+    color: #ffcc00; /* Gold color for stars */
+  }
+
+  /* Styles for the price */
+  .springOffersCard .price {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 16px;
+  }
+
+  /* whatWeDo */
+  .whatWeDo {
+    /* background-color: var(--fourth-color); */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    /* background-color: rebeccapurple; */
+  }
+  .whatWeDoHeading {
+    /* background-color: var(--secondary-color); */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+  }
+  .whatWeDoHeading > img {
+    width: 50px;
+    /* background-color: var(--border-color); */
+  }
+  .whatWeDoHeading > h1 {
+    font-size: var(--font-size-medium);
+  }
+
+  /* whatWeDoCarousalContainer */
+  .whatWeDoCarousalContainer {
+    display: flex;
+    flex-direction: column;
+    /* background-color: #a24513; */
+    padding: 10px;
+  }
+
+  /* Style for carousel items */
+  .carousalContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .carouselCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-width: 300px;
+    width: 100%;
+    height: 200px;
+    background-color: var(--white-color);
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    border: 3px solid;
+    border-color: var(--border-color);
+    border-radius: 30px;
+  }
+
+  .carouselCard > img {
+    width: 50px;
+  }
+  /* carousel dots */
+  .carousalDots {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .carousalDot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .carousalDot.active {
+    background-color: #333;
+  }
+
+  /*  customer opinions */
+  .customerOpinion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    overflow: hidden;
+    gap: 10px;
+  }
+
+  .opinionLeftCard {
+    /* background-color: var(--primary-color); */
+    /* background-color: rebeccapurple; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    padding: 5px;
+    width: 100%;
+    /* height: 50%; */
+    overflow: hidden;
+    border-radius: 40px;
+  }
+
+  .opinionLeftCard > img {
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+  }
+  .content {
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content > h2 {
+    font-size: var(--font-size-medium);
+    margin: 0 0 2px;
+  }
+
+  .content > p {
+    font-size: var(--font-size-small);
+    margin: 0 0 2px;
+  }
+
+  .content p {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .opinionsInner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  .opinionCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #fff;
+    border: 3px solid;
+    border-color: var(--border-color);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  /* opinions For CustomersContainer */
+  .opinionsForCustomersContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: var(--fourth-color);
+  }
+
+  /* Style for carousel items */
+  .opinionCardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s ease;
+  }
+  .opinionCardContainer > .carouselCard {
+    padding: 0px;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
   }
   .newsLetters {
     /* background-color: #333; */
@@ -1390,7 +1368,7 @@ form > button {
   .newsLetterHeading {
     display: flex;
     flex-direction: column;
-    gap:30px;
+    gap: 30px;
   }
   .newsLetterHeading > h2 {
     font-size: var(--font-size-medium);
@@ -1398,7 +1376,6 @@ form > button {
   .newsLetterHeading > p {
     font-size: var(--font-size-small);
     padding: 0px 0px 10px;
-
   }
 
   .newsLetterEmail {
@@ -1436,33 +1413,33 @@ form > button {
   .footer-section {
     margin-bottom: 10px;
   }
-  
+
   .footer-section h3 {
     padding-bottom: 10px;
     font-size: var(--font-size-medium);
     color: var(--black-color);
   }
-  
+
   .footer-section ul {
     list-style: none;
     padding: 0;
     margin: 10px 0 0;
   }
-  
+
   .footer-section ul li {
     margin-bottom: 8px;
   }
-  
+
   .footer-section ul li a {
     font-size: var(--font-size-small);
     text-decoration: none;
     color: var(--black-color);
   }
-  
+
   .footer-section ul li a:hover {
     text-decoration: underline;
   }
-  
+
   /* footerNav */
   .footerNav {
     background-color: var(--white-color);
@@ -1474,5 +1451,191 @@ form > button {
   }
   .footerNav > p {
     font-size: var(--font-size-small);
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) and (max-width: 920px) {
+  .heroContainer {
+    height: 700px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-color: green;
+    position: relative;
+  }
+  .navlinks {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+    top: 1px;
+    left: 1px;
+    background-color: var(--white-color);
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .navlinks.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .hamburger {
+    display: block;
+  }
+  .closeHamburger {
+    display: block;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  /* hero */
+  .hero {
+    height: 100vh; /* Adjust based on the desired height */
+    width: 100vw; /* Full width of the viewport */
+    background-image: url("./images/hero.png");
+    background-repeat: no-repeat;
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-color: var(
+      --background-primary-color
+    ); /* Optional, for fallback */
+  }
+
+  /* whatWeDo */
+  .whatWeDo {
+    /* background-color: var(--fourth-color); */
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    /* background-color: rebeccapurple; */
+  }
+  .whatWeDoHeading {
+    /* background-color: var(--secondary-color); */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+  }
+  .whatWeDoHeading > img {
+    width: 50px;
+    /* background-color: var(--border-color); */
+  }
+  .whatWeDoHeading > h1 {
+    font-size: var(--font-size-medium);
+  }
+
+  /* whatWeDoCarousalContainer */
+  .whatWeDoCarousalContainer {
+    display: flex;
+    flex-direction: column;
+    /* background-color: #a24513; */
+    padding: 0px 15px 60px;
+  }
+
+  /* Style for carousel items */
+  .carousalContainer {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    gap: 20px;
+  }
+
+  .carouselCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-width: 300px;
+    width: 100%;
+    height: 200px;
+    background-color: var(--white-color);
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    border: 3px solid;
+    border-color: var(--border-color);
+    border-radius: 30px;
+  }
+
+  /* opinions For CustomersContainer */
+  .opinionsForCustomersContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: var(--fourth-color);
+  }
+
+  /* Style for carousel items */
+  .opinionCardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    transition: transform 0.3s ease;
+  }
+  .opinionCardContainer > .carouselCard {
+    padding: 0px;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+  }
+
+  /*  customer opinions */
+  .customerOpinion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    overflow: hidden;
+    gap: 10px;
+  }
+
+  .opinionLeftCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    padding: 2px;
+    width: 100%;
+    /* height: 50%; */
+    overflow: hidden;
+    border-radius: 40px;
+  }
+  .opinionsInner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  .opinionCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #fff;
+    border: 3px solid;
+    border-color: var(--border-color);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 30%;
+  }
+  .opinionCard > img {
+    width: 100%;
   }
 }
