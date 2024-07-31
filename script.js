@@ -283,6 +283,95 @@ const customersOponions = [
 ];
 
 /**
+ * opinions For Customers  Data
+ */
+
+const opinionsForCustomers = [
+  {
+    id: 9222,
+    avatar:
+      "https://img.freepik.com/free-psd/3d-render-avatar-character_23-2150611716.jpg?w=740&t=st=1722407398~exp=1722407998~hmac=0760772bba280a8137a2bb03f89d1c2426216902793ee372df2f729ed44c20a0",
+    message:
+      "Non sono soddisfatto di questo peluche. Il materiale sembra economico e la cucitura è piuttosto approssimativa",
+    name: "Claudio Boldi",
+    type: "Operaio, genitore",
+  },
+  {
+    id: 9432,
+    avatar:
+      "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=740&t=st=1722407445~exp=1722408045~hmac=044e72760e93462746def288c3a5f71bf05e90a7e748852a0a18c46920698c5a",
+    message:
+      "“Questo peluche è fantastico! La qualità del materiale è eccezionale e la sua morbidezza lo rende perfetto per abbracciare”",
+    name: "Maria Cipollari",
+    type: "Casalinga, mamma",
+  },
+  {
+    id: 43222,
+    avatar:
+      "https://img.freepik.com/premium-photo/3d-avatar-cartoon-character_113255-95040.jpg?w=740",
+    message:
+      "Il peluche stesso è di alta qualità, con dettagli ben curati e una consistenza morbida e soffice. Consiglio vivamente questo negozio!",
+    name: "Jessica Merla",
+    type: "Pensionata, nonna",
+  },
+  {
+    id: 12222,
+    avatar:
+      "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?w=740&t=st=1722407569~exp=1722408169~hmac=0771945361a65543c23722631e0c4a149bc11ee7be1d756469c4cc9b93b44d8c",
+    message:
+      "Non sono soddisfatto di questo peluche. Il materiale sembra economico e la cucitura è piuttosto approssimativa",
+    name: "Claudio Boldi",
+    type: "Operaio, genitore",
+  },
+  {
+    id: 87222,
+    avatar:
+      "https://img.freepik.com/free-psd/3d-render-avatar-character_23-2150611716.jpg?w=740&t=st=1722407398~exp=1722407998~hmac=0760772bba280a8137a2bb03f89d1c2426216902793ee372df2f729ed44c20a0",
+    message:
+      "Non sono soddisfatto di questo peluche. Il materiale sembra economico e la cucitura è piuttosto approssimativa",
+    name: "Claudio Boldi",
+    type: "Operaio, genitore",
+  },
+  {
+    id: 12432,
+    avatar:
+      "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=740&t=st=1722407445~exp=1722408045~hmac=044e72760e93462746def288c3a5f71bf05e90a7e748852a0a18c46920698c5a",
+    message:
+      "“Questo peluche è fantastico! La qualità del materiale è eccezionale e la sua morbidezza lo rende perfetto per abbracciare”",
+    name: "Maria Cipollari",
+    type: "Casalinga, mamma",
+  },
+  {
+    id: 92222,
+    avatar:
+      "https://img.freepik.com/premium-photo/3d-avatar-cartoon-character_113255-95040.jpg?w=740",
+    message:
+      "Il peluche stesso è di alta qualità, con dettagli ben curati e una consistenza morbida e soffice. Consiglio vivamente questo negozio!",
+    name: "Jessica Merla",
+    type: "Pensionata, nonna",
+  },
+
+  {
+    id: 21222,
+    avatar:
+      "https://img.freepik.com/free-psd/3d-render-avatar-character_23-2150611716.jpg?w=740&t=st=1722407398~exp=1722407998~hmac=0760772bba280a8137a2bb03f89d1c2426216902793ee372df2f729ed44c20a0",
+    message:
+      "Non sono soddisfatto di questo peluche. Il materiale sembra economico e la cucitura è piuttosto approssimativa",
+    name: "Claudio Boldi",
+    type: "Operaio, genitore",
+  },
+  {
+    id: 87222,
+    avatar:
+      "https://img.freepik.com/free-psd/3d-render-avatar-character_23-2150611716.jpg?w=740&t=st=1722407398~exp=1722407998~hmac=0760772bba280a8137a2bb03f89d1c2426216902793ee372df2f729ed44c20a0",
+    message:
+      "Non sono soddisfatto di questo peluche. Il materiale sembra economico e la cucitura è piuttosto approssimativa",
+    name: "Claudio Boldi",
+    type: "Operaio, genitore",
+  },
+];
+
+/**
  *  Rendering  Offers UI.
  */
 
@@ -435,32 +524,36 @@ let currentPage = 0;
 
 /**
  * 1.Creating carousel with carousel  items cards.
+ * renderCarousel accepts   { @param  1. container 2. datObj
  */
-function renderCarousel() {
-  carousalContainer.innerHTML = "";
+function renderCarousel(container, dataObj) {
+  container.innerHTML = "";
   const start = currentPage * itemsPerPage;
   const end = start + itemsPerPage;
-  const itemsToDisplay = weDo.slice(start, end);
+  const itemsToDisplay = dataObj.slice(start, end);
 
+  // avatar, message, name, type
   itemsToDisplay.forEach((card) => {
     const carouselCard = document.createElement("div");
     carouselCard.className = "carouselCard";
     carouselCard.innerHTML = `
-      <img src="${card.icon}" alt="${card.title}">
-      <h2>${card.title}</h2>
-      <p>${card.subTitle}</p>
+      <img src="${card.icon || card.avatar}" alt="${card.title}">
+      <h2>${card.title || card.message}</h2>
+      <p>${card.subTitle || card.name}</p>
+      <span>${card.type || ""}</span>
     `;
-    carousalContainer.appendChild(carouselCard);
+    container.appendChild(carouselCard);
   });
 }
 
 /**
  * 1.Create carousel dots.
+ *  renderDots accepts   { @param  1. dots 2. datObj
  */
 
-function renderDots() {
-  carousalDots.innerHTML = ""; // Clear existing dots
-  const numberOfPages = Math.ceil(weDo.length / itemsPerPage);
+function renderDots(dots, dataObj, fn) {
+  dots.innerHTML = ""; // Clear existing dots
+  const numberOfPages = Math.ceil(dataObj.length / itemsPerPage);
 
   for (let i = 0; i < numberOfPages; i++) {
     const dot = document.createElement("div");
@@ -474,17 +567,17 @@ function renderDots() {
 
     dot.addEventListener("click", () => {
       currentPage = i;
-      updateCarousel();
+      fn();
     });
 
-    carousalDots.appendChild(dot);
+    dots.appendChild(dot);
   }
 }
 
 // Update carousel and dots
 function updateCarousel() {
-  renderCarousel();
-  renderDots();
+  renderCarousel(carousalContainer, weDo);
+  renderDots(carousalDots, weDo, updateCarousel);
 }
 
 // Initial render
@@ -536,3 +629,22 @@ customersOponions.forEach((opinion) => {
 
   customerOpinionContainer.appendChild(opinionCard);
 });
+
+/**
+ * 1. Rendering opinionsForCustomersContainer.
+ */
+
+const opinionsForCustomersContainer = document.querySelector(
+  ".opinionsForCustomersContainer"
+);
+
+const opinionDots = document.querySelector(".opinionDots");
+const opinionCardContainer = document.querySelector(".opinionCardContainer");
+// Update carousel and dots
+function updateOpinionCarousel() {
+  renderCarousel(opinionCardContainer, opinionsForCustomers);
+  renderDots(opinionDots, opinionsForCustomers, updateOpinionCarousel);
+}
+
+// Initial render
+updateOpinionCarousel();
