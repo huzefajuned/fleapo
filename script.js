@@ -103,6 +103,7 @@ const navlinks = [
     id: 1,
     title: "Home",
     type: "link",
+    containerClass: "heroContainer",
   },
   {
     id: 1,
@@ -114,21 +115,25 @@ const navlinks = [
     id: 1,
     title: "Novita",
     type: "link",
+    containerClass: "collections",
   },
   {
     id: 1,
     title: "Marchi",
     type: "link",
+    containerClass: "whatWeDo",
   },
   {
     id: 1,
     title: "Carte Regalo",
     type: "link",
+    containerClass: "mostWantedToysContainer",
   },
   {
     id: 1,
     title: "Chi siamo",
     type: "link",
+    containerClass: "footerContainer",
   },
   {
     id: 1,
@@ -418,6 +423,17 @@ const footerLinks = [
 ];
 
 /**
+ * smooth scrooling @param  1. className 
+ */
+
+function smoothScroll(elementClass) {
+  const element = document.querySelector(`.${elementClass}`);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+/**
  *  Rendering  Offers UI.
  */
 
@@ -444,9 +460,12 @@ navlinks.forEach((link) => {
 
   if (link.type === "link") {
     element = document.createElement("a");
-    element.href = "#";
+    // element.href = "";
     element.textContent = link.title;
     element.className = "nav-item";
+    element.addEventListener("click", () =>
+      smoothScroll(link?.containerClass || "")
+    );
   } else if (link.type === "dropdown") {
     element = document.createElement("div");
     element.className = "nav-dropdown";
@@ -717,7 +736,7 @@ function renderFooterLinks(links) {
     linkArray.forEach((item) => {
       const listItem = document.createElement("li");
       const anchor = document.createElement("a");
-      anchor.href = "#"; 
+      anchor.href = "#";
       anchor.textContent = item;
       listItem.appendChild(anchor);
       list.appendChild(listItem);
