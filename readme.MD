@@ -21,27 +21,6 @@ The primary goal of this assignment dynamic content integration and code reusabi
 - **CSS:** Uses Flexbox for layout management with reusable classes and modular styles. Includes variables and mixins to ensure consistency and reduce code duplication.
 - **JavaScript:** Handles dynamic content updates and interactions with reusable functions and modules for improved code efficiency.
 
-### Screenshots
-
-#### Web View
-
-![Web View](screenshots/desktop1.png)
-![Web View](screenshots/desktop2.png)
-![Web View](screenshots/desktop3.png)
-![Web View](screenshots/desktop4.png)
-![Web View](screenshots/desktop5.png)
-![Web View](screenshots/desktop6.png)
-
-
-#### Mobile View
-
-<img src="screenshots/mobile1.png" alt="Mobile View" width="300" />
-<img src="screenshots/mobile2.png" alt="Mobile View" width="300" />
-<img src="screenshots/mobile3.png" alt="Mobile View" width="300" />
-<img src="screenshots/mobile4.png" alt="Mobile View" width="300" />
-<img src="screenshots/mobile5.png" alt="Mobile View" width="300" />
-<img src="screenshots/mobile6.png" alt="Mobile View" width="300" />
-<img src="screenshots/mobile7.png" alt="Mobile View" width="300" />
 
 
 ### Installation
@@ -59,3 +38,28 @@ To explore or modify the project locally, follow these steps:
    ```
    https://huzefajuned.github.io/fleapo
    ```
+
+
+
+### Screenshots
+
+#### Web View
+
+![Web View](screenshots/desktop1.png)
+![Web View](screenshots/desktop2.png)
+![Web View](screenshots/desktop3.png)
+![Web View](screenshots/desktop4.png)
+![Web View](screenshots/desktop5.png)
+![Web View](screenshots/desktop6.png)
+
+
+#### Mobile View
+
+<img src="screenshots/mobile1.png" alt="Mobile View" width="200" />
+<img src="screenshots/mobile2.png" alt="Mobile View" width="200" />
+<img src="screenshots/mobile3.png" alt="Mobile View" width="200" />
+<img src="screenshots/mobile4.png" alt="Mobile View" width="200" />
+<img src="screenshots/mobile5.png" alt="Mobile View" width="200" />
+<img src="screenshots/mobile6.png" alt="Mobile View" width="200" />
+<img src="screenshots/mobile7.png" alt="Mobile View" width="200" />
+
